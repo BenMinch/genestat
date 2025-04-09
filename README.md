@@ -1,5 +1,7 @@
 
 # GeneStat
+![genestat (1)](https://github.com/user-attachments/assets/d2f22373-2210-422c-9266-d9835cfcb2a4)
+
 
 GeneStat is a comprehensive Python pipeline that calculates various genome-based statistics, including:
 
