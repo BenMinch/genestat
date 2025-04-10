@@ -14,7 +14,7 @@ GeneStat is a comprehensive Python pipeline that calculates various genome-based
 - Tetranucleotide frequency (TNF) and principal components
 
 ## 📦 Requirements
-
+To install the program run `git clone https://github.com/BenMinch/genestat`
 Before running the pipeline, make sure the following tools and libraries are installed:
 
 ### System Dependencies
