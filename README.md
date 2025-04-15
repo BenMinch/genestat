@@ -12,6 +12,7 @@ GeneStat is a comprehensive Python pipeline that calculates various genome-based
 - Effective Number of Codons (ENC) per gene and per genome using CodonW
 - Internal stop codons
 - Tetranucleotide frequency (TNF) and principal components
+- Protein Redundancy
 
 ## 📦 Requirements
 To install the program run `git clone https://github.com/BenMinch/genestat`
@@ -24,6 +25,7 @@ You must have the following installed on your system and accessible from the com
 - [Prodigal](https://github.com/hyattpd/Prodigal)
 - [CodonW](http://codonw.sourceforge.net/)
 - [SeqKit](https://bioinf.shenwei.me/seqkit/)
+- [mmseqs2](https://mmseqs.com/)
 
 You can install them via:
 
@@ -36,6 +38,9 @@ conda install -c bioconda codonw
 
 # SeqKit
 conda install -c bioconda seqkit
+
+#mmseqs
+conda install -c conda-forge -c bioconda mmseqs2
 ```
 
 ### Python Dependencies
