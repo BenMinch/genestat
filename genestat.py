@@ -42,6 +42,10 @@ def main():
     gene_folder=output_dir+'/Predicted_ORFs'
     codon_usage='python scripts/codon_usage.py -i '+gene_folder+' -o '+output_dir+'/codon_usage.csv'
     subprocess.call(codon_usage, shell=True)
+    ##Run Redundancy
+    print('[bold magenta]**Calculating Redundancy**[bold magenta]')
+    redundancy='python scripts/redundancy.py '+gene_folder+' --output '+output_dir+'/redundancy.csv'
+    subprocess.call(redundancy, shell=True,stderr=open('redundancy.error', 'w'),stdout=open('redundancy.out', 'w'))
 
     ##Run ENC
     print('[bold blue]**Calculating ENC**[bold blue]')
@@ -145,6 +149,13 @@ def main():
     #merge with master_df
     master_df = master_df.merge(enc, on='Genome', how='left')
 
+    #Do Redundancy
+    redundancy = pd.read_csv(output_dir+'/redundancy.csv')
+    #replace .genes.fna with ''
+    redundancy['Filename'] = redundancy['Filename'].str.replace('.faa', '')
+    #merge with master_df
+    master_df['Redundancy'] = master_df['Genome'].map(redundancy.set_index('Filename')['Redundancy'])
+    #save the final dataframe
     master_df.to_csv(output_dir+'/All_genome_stats.csv', index=False)
 
 
