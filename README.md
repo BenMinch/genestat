@@ -14,7 +14,7 @@ GeneStat is a comprehensive Python pipeline that calculates various genome-based
 - Tetranucleotide frequency (TNF) and principal components
 - Protein Redundancy
 
-## 📦 Requirements
+##  Requirements
 To install the program run `git clone https://github.com/BenMinch/genestat`
 Before running the pipeline, make sure the following tools and libraries are installed:
 
@@ -60,7 +60,7 @@ python genestat.py -i input_folder -o output_folder
 - `input_folder`: Folder containing input FASTA files (one per genome)
 - `output_folder`: Folder where output files and statistics will be saved
 
-## 🔍 Pipeline Overview
+##  Pipeline Overview
 
 1. **Prodigal ORF Prediction**: Predicts ORFs from each genome using a custom launcher.
 2. **TNF Profiling**: Profiles tetranucleotide frequency for each genome.
@@ -71,7 +71,7 @@ python genestat.py -i input_folder -o output_folder
 7. **Basic Stats**: Uses SeqKit to summarize sequence assembly stats.
 8. **Final Compilation**: All statistics are merged into a master CSV file called `All_genome_stats.csv`.
 
-## 🗂 Output Files
+##  Output Files
 
 - `ENC_per_gene.csv`: ENC value for each gene
 - `ENC_genome_mean.csv`: Average ENC per genome
@@ -83,7 +83,7 @@ python genestat.py -i input_folder -o output_folder
 - `all_genomes_tetranucleotides_TNF_Profiles.csv`: TNF profiles
 - `All_genome_stats.csv`: Combined metrics for each genome
 
-## 🔧 Script Structure
+##  Script Structure
 
 This program assumes the following helper scripts are located in the `scripts/` folder:
 
@@ -96,7 +96,7 @@ This program assumes the following helper scripts are located in the `scripts/` 
 
 Ensure they are executable and available in the same directory structure.
 
-## 🧬 Example
+##  Example
 
 ```
 python genestat.py -i example_data/ -o results/
